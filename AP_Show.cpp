@@ -4,6 +4,7 @@
 #include <string.h>
 #include "AP_Show.h"
 #include "AP_Show_SSD1306_I2C.h"
+#include "AP_Show_SSD1306_SPI.h"
 
 #if defined(USE_RTTHREAD)
 using namespace rtthread;
@@ -27,6 +28,7 @@ AP_Show::init(led_type_t type)
       break;
     }
     case SSD1306_OLED_SPI:{
+      _drivers[i] = new AP_Show_SSD1306_SPI(*this);
       break;
     }
     }

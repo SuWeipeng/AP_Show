@@ -15,6 +15,7 @@ class AP_Show
 {
   friend class AP_Show_Backend;
   friend class AP_Show_SSD1306_I2C;
+  friend class AP_Show_SSD1306_SPI;
 public:
   AP_Show();
   ~AP_Show() {}
