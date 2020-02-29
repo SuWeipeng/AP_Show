@@ -49,7 +49,7 @@ AP_Show::update()
   for(uint8_t i=0; i<DISP_MAX_PAGES; i++){
     _update_page_bitmask(i);
     for(uint8_t num=0; num<DISP_MAX_DRIVERS; num++){
-	_drivers[0]->update(i);
+	_drivers[num]->update(i);
     }
   }
 }
