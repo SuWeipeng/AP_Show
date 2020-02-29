@@ -44,6 +44,7 @@ public:
   void update();
   void page_write(uint8_t page_num, uint8_t line_num, char* content, const char* head="");
   void show_page(uint8_t page_num) { _content.current_page = page_num; }
+  void show_now(uint8_t page_num)  { _content.refresh_bitmask |= (0x01 << page_num); }
 
 private:
   static AP_Show*     _instance;
