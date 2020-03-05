@@ -19,7 +19,7 @@ AP_Show::AP_Show()
 }
 
 void 
-AP_Show::init(led_type_t type)
+AP_Show::init(screen_type_t type)
 {
   for(uint8_t i=0; i<DISP_MAX_DRIVERS; i++){
     switch(type){

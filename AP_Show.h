@@ -32,14 +32,14 @@ public:
   typedef enum {
     SSD1306_OLED_I2C,
     SSD1306_OLED_SPI
-  } led_type_t;
+  } screen_type_t;
   
   // get singleton
   static AP_Show *get_instance(void) {
     return _instance;
   }
   
-  void init(led_type_t type);
+  void init(screen_type_t type);
   void show(uint8_t* str, uint8_t x_pos, uint8_t y_pos);
   void update();
   void page_write(uint8_t page_num, uint8_t line_num, char* content, const char* head="");
