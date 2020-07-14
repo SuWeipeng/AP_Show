@@ -49,7 +49,7 @@ AP_Show::update()
   for(uint8_t i=0; i<DISP_MAX_PAGES; i++){
     _update_page_bitmask(i);
     for(uint8_t num=0; num<DISP_MAX_DRIVERS; num++){
-	_drivers[num]->update(i);
+      _drivers[num]->update(i);
     }
   }
 }
@@ -68,10 +68,10 @@ AP_Show::_update_page_bitmask(uint8_t page_num)
 {
   for(uint8_t i=0; i<DISP_MAX_LINE_PER_PAGE; i++){
     if(strcmp(_content.content_last[page_num * DISP_MAX_LINE_PER_PAGE + i],
-	      _content.content[page_num * DISP_MAX_LINE_PER_PAGE + i]) != 0){
+      _content.content[page_num * DISP_MAX_LINE_PER_PAGE + i]) != 0){
       _content.refresh_bitmask |= (0x01 << page_num);
       strncpy(_content.content_last[page_num * DISP_MAX_LINE_PER_PAGE + i],
-	      _content.content[page_num * DISP_MAX_LINE_PER_PAGE + i],DISP_MAX_CHAR_PER_LINE);
+      _content.content[page_num * DISP_MAX_LINE_PER_PAGE + i],DISP_MAX_CHAR_PER_LINE);
     }
   }
 }
